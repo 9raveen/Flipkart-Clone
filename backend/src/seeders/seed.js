@@ -5,29 +5,28 @@ const { sequelize, User, Category, Product } = require('../models');
 const DEFAULT_USER_ID = 'default-user-uuid-0000-000000000001';
 
 const categories = [
-  { id: 'cat-electronics-0000-000000000001', name: 'Electronics', slug: 'electronics', image: 'https://rukminim2.flixcart.com/flap/80/80/image/69c6589653afdb9a.png' },
-  { id: 'cat-mobiles-000000-000000000002', name: 'Mobiles', slug: 'mobiles', image: 'https://rukminim2.flixcart.com/flap/80/80/image/22fddf3c7da4c4f4.png' },
-  { id: 'cat-fashion-000000-000000000003', name: 'Fashion', slug: 'fashion', image: 'https://rukminim2.flixcart.com/flap/80/80/image/c12afc017e6f24cb.png' },
-  { id: 'cat-appliances-00-000000000004', name: 'Appliances', slug: 'appliances', image: 'https://rukminim2.flixcart.com/flap/80/80/image/0ff199d1bd27eb98.png' },
-  { id: 'cat-furniture-000-000000000005', name: 'Furniture', slug: 'furniture', image: 'https://rukminim2.flixcart.com/flap/80/80/image/ab7e2b022a4587dd.jpg' },
-  { id: 'cat-books-0000000-000000000006', name: 'Books', slug: 'books', image: 'https://rukminim2.flixcart.com/flap/80/80/image/71050627a56b4693.png' },
-  { id: 'cat-sports-000000-000000000007', name: 'Sports', slug: 'sports', image: 'https://rukminim2.flixcart.com/flap/80/80/image/dff3f7adcf3a90c6.png' },
-  { id: 'cat-beauty-000000-000000000008', name: 'Beauty', slug: 'beauty', image: 'https://rukminim2.flixcart.com/flap/80/80/image/dff3f7adcf3a90c6.png' },
+  { id: 'cat-electronics-0000-000000000001', name: 'Electronics', slug: 'electronics', image: 'https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/1.webp' },
+  { id: 'cat-mobiles-000000-000000000002', name: 'Mobiles', slug: 'mobiles', image: 'https://cdn.dummyjson.com/product-images/smartphones/iphone-15-pro-max/1.webp' },
+  { id: 'cat-fashion-000000-000000000003', name: 'Fashion', slug: 'fashion', image: 'https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/1.webp' },
+  { id: 'cat-appliances-00-000000000004', name: 'Appliances', slug: 'appliances', image: 'https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/1.webp' },
+  { id: 'cat-furniture-000-000000000005', name: 'Furniture', slug: 'furniture', image: 'https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/1.webp' },
+  { id: 'cat-books-0000000-000000000006', name: 'Books', slug: 'books', image: 'https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp' },
+  { id: 'cat-sports-000000-000000000007', name: 'Sports', slug: 'sports', image: 'https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/1.webp' },
+  { id: 'cat-beauty-000000-000000000008', name: 'Beauty', slug: 'beauty', image: 'https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp' },
 ];
 
 const products = [
-  // Mobiles
   {
     name: 'Samsung Galaxy S24 Ultra 5G',
     description: 'The ultimate Galaxy experience with AI-powered features, 200MP camera, and titanium design.',
     price: 124999, originalPrice: 134999, discount: 7, stock: 50, brand: 'Samsung',
     rating: 4.5, reviewCount: 2341, isFeatured: true,
     categoryId: 'cat-mobiles-000000-000000000002',
-    images: [
-      'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop',
-    ],
-    specifications: { Display: '6.8" QHD+ Dynamic AMOLED', Processor: 'Snapdragon 8 Gen 3', RAM: '12GB', Storage: '256GB', Battery: '5000mAh', Camera: '200MP + 12MP + 10MP + 10MP' },
+    images: JSON.stringify([
+      'https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s24-ultra/1.webp',
+      'https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s24-ultra/2.webp',
+    ]),
+    specifications: JSON.stringify({ Display: '6.8" QHD+ Dynamic AMOLED', Processor: 'Snapdragon 8 Gen 3', RAM: '12GB', Storage: '256GB', Battery: '5000mAh' }),
   },
   {
     name: 'Apple iPhone 15 Pro Max',
@@ -35,11 +34,11 @@ const products = [
     price: 159900, originalPrice: 179900, discount: 11, stock: 30, brand: 'Apple',
     rating: 4.7, reviewCount: 5678, isFeatured: true,
     categoryId: 'cat-mobiles-000000-000000000002',
-    images: [
-      'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=400&fit=crop',
-    ],
-    specifications: { Display: '6.7" Super Retina XDR', Processor: 'A17 Pro', RAM: '8GB', Storage: '256GB', Battery: '4422mAh', Camera: '48MP + 12MP + 12MP' },
+    images: JSON.stringify([
+      'https://cdn.dummyjson.com/product-images/smartphones/iphone-15-pro-max/1.webp',
+      'https://cdn.dummyjson.com/product-images/smartphones/iphone-15-pro-max/2.webp',
+    ]),
+    specifications: JSON.stringify({ Display: '6.7" Super Retina XDR', Processor: 'A17 Pro', RAM: '8GB', Storage: '256GB', Battery: '4422mAh' }),
   },
   {
     name: 'OnePlus 12 5G',
@@ -47,8 +46,8 @@ const products = [
     price: 64999, originalPrice: 69999, discount: 7, stock: 80, brand: 'OnePlus',
     rating: 4.4, reviewCount: 1234,
     categoryId: 'cat-mobiles-000000-000000000002',
-    images: ['https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop'],
-    specifications: { Display: '6.82" LTPO AMOLED', Processor: 'Snapdragon 8 Gen 3', RAM: '12GB', Storage: '256GB', Battery: '5400mAh' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/smartphones/oneplus-12r/1.webp']),
+    specifications: JSON.stringify({ Display: '6.82" LTPO AMOLED', Processor: 'Snapdragon 8 Gen 3', RAM: '12GB', Storage: '256GB', Battery: '5400mAh' }),
   },
   {
     name: 'Redmi Note 13 Pro+ 5G',
@@ -56,21 +55,20 @@ const products = [
     price: 29999, originalPrice: 34999, discount: 14, stock: 120, brand: 'Redmi',
     rating: 4.3, reviewCount: 3456,
     categoryId: 'cat-mobiles-000000-000000000002',
-    images: ['https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=400&fit=crop'],
-    specifications: { Display: '6.67" AMOLED', Processor: 'Dimensity 7200 Ultra', RAM: '8GB', Storage: '256GB', Battery: '5000mAh' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/smartphones/xiaomi-mi-11/1.webp']),
+    specifications: JSON.stringify({ Display: '6.67" AMOLED', Processor: 'Dimensity 7200 Ultra', RAM: '8GB', Storage: '256GB', Battery: '5000mAh' }),
   },
-  // Electronics
   {
     name: 'Sony WH-1000XM5 Wireless Headphones',
     description: 'Industry-leading noise cancellation, 30hr battery, multipoint connection.',
     price: 26990, originalPrice: 34990, discount: 23, stock: 60, brand: 'Sony',
     rating: 4.6, reviewCount: 4567, isFeatured: true,
     categoryId: 'cat-electronics-0000-000000000001',
-    images: [
-      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=400&fit=crop',
-    ],
-    specifications: { Type: 'Over-ear', Connectivity: 'Bluetooth 5.2', Battery: '30 hours', NoiseCancellation: 'Yes', Weight: '250g' },
+    images: JSON.stringify([
+      'https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp',
+      'https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/2.webp',
+    ]),
+    specifications: JSON.stringify({ Type: 'Over-ear', Connectivity: 'Bluetooth 5.2', Battery: '30 hours', NoiseCancellation: 'Yes' }),
   },
   {
     name: 'Apple MacBook Air M2',
@@ -78,11 +76,11 @@ const products = [
     price: 114900, originalPrice: 119900, discount: 4, stock: 25, brand: 'Apple',
     rating: 4.8, reviewCount: 2890, isFeatured: true,
     categoryId: 'cat-electronics-0000-000000000001',
-    images: [
-      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1611186871525-9c4f9b855c3e?w=400&h=400&fit=crop',
-    ],
-    specifications: { Processor: 'Apple M2', RAM: '8GB', Storage: '256GB SSD', Display: '13.6" Liquid Retina', Battery: '18 hours' },
+    images: JSON.stringify([
+      'https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp',
+      'https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/2.webp',
+    ]),
+    specifications: JSON.stringify({ Processor: 'Apple M2', RAM: '8GB', Storage: '256GB SSD', Display: '13.6" Liquid Retina', Battery: '18 hours' }),
   },
   {
     name: 'Samsung 55" 4K QLED Smart TV',
@@ -90,8 +88,8 @@ const products = [
     price: 54990, originalPrice: 79990, discount: 31, stock: 15, brand: 'Samsung',
     rating: 4.4, reviewCount: 1876, isFeatured: true,
     categoryId: 'cat-electronics-0000-000000000001',
-    images: ['https://images.unsplash.com/photo-1593359677879-a4bb92f829e1?w=400&h=400&fit=crop'],
-    specifications: { Size: '55 inches', Resolution: '4K UHD', Technology: 'QLED', SmartTV: 'Yes', HDR: 'HDR10+' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/1.webp']),
+    specifications: JSON.stringify({ Size: '55 inches', Resolution: '4K UHD', Technology: 'QLED', SmartTV: 'Yes' }),
   },
   {
     name: 'boAt Airdopes 141 TWS Earbuds',
@@ -99,18 +97,17 @@ const products = [
     price: 1299, originalPrice: 4990, discount: 74, stock: 200, brand: 'boAt',
     rating: 4.1, reviewCount: 89234,
     categoryId: 'cat-electronics-0000-000000000001',
-    images: ['https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=400&fit=crop'],
-    specifications: { Type: 'TWS', Battery: '42 hours total', Connectivity: 'Bluetooth 5.3', WaterResistance: 'IPX4' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-pro/1.webp']),
+    specifications: JSON.stringify({ Type: 'TWS', Battery: '42 hours total', Connectivity: 'Bluetooth 5.3', WaterResistance: 'IPX4' }),
   },
-  // Fashion
   {
     name: "Levi's Men's 511 Slim Fit Jeans",
     description: 'Classic slim fit jeans in stretch denim for all-day comfort.',
     price: 2099, originalPrice: 3999, discount: 48, stock: 150, brand: "Levi's",
     rating: 4.3, reviewCount: 5678,
     categoryId: 'cat-fashion-000000-000000000003',
-    images: ['https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=400&fit=crop'],
-    specifications: { Fit: 'Slim', Material: '99% Cotton, 1% Elastane', Occasion: 'Casual', Care: 'Machine Wash' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/1.webp']),
+    specifications: JSON.stringify({ Fit: 'Slim', Material: '99% Cotton, 1% Elastane', Occasion: 'Casual' }),
   },
   {
     name: 'Nike Air Max 270 Running Shoes',
@@ -118,18 +115,20 @@ const products = [
     price: 8995, originalPrice: 12995, discount: 31, stock: 75, brand: 'Nike',
     rating: 4.5, reviewCount: 3421, isFeatured: true,
     categoryId: 'cat-fashion-000000-000000000003',
-    images: ['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop'],
-    specifications: { Type: 'Running', Sole: 'Rubber', Closure: 'Lace-Up', Material: 'Mesh + Synthetic' },
+    images: JSON.stringify([
+      'https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/1.webp',
+      'https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/2.webp',
+    ]),
+    specifications: JSON.stringify({ Type: 'Running', Sole: 'Rubber', Closure: 'Lace-Up', Material: 'Mesh + Synthetic' }),
   },
-  // Appliances
   {
     name: 'LG 8 Kg 5 Star Inverter Washing Machine',
     description: 'AI Direct Drive, Steam wash, TurboWash 360 technology.',
     price: 42990, originalPrice: 55990, discount: 23, stock: 20, brand: 'LG',
     rating: 4.4, reviewCount: 2341,
     categoryId: 'cat-appliances-00-000000000004',
-    images: ['https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&h=400&fit=crop'],
-    specifications: { Capacity: '8 Kg', Type: 'Front Load', StarRating: '5 Star', SpinSpeed: '1400 RPM' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/1.webp']),
+    specifications: JSON.stringify({ Capacity: '8 Kg', Type: 'Front Load', StarRating: '5 Star', SpinSpeed: '1400 RPM' }),
   },
   {
     name: 'Whirlpool 265L 3 Star Frost Free Refrigerator',
@@ -137,38 +136,38 @@ const products = [
     price: 27990, originalPrice: 35990, discount: 22, stock: 18, brand: 'Whirlpool',
     rating: 4.3, reviewCount: 1567,
     categoryId: 'cat-appliances-00-000000000004',
-    images: ['https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=400&fit=crop'],
-    specifications: { Capacity: '265 Litres', Type: 'Double Door', StarRating: '3 Star', Compressor: 'Inverter' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/1.webp']),
+    specifications: JSON.stringify({ Capacity: '265 Litres', Type: 'Double Door', StarRating: '3 Star', Compressor: 'Inverter' }),
   },
-  // Books
   {
     name: 'Atomic Habits by James Clear',
     description: 'An easy and proven way to build good habits and break bad ones.',
     price: 399, originalPrice: 799, discount: 50, stock: 300, brand: 'Penguin',
     rating: 4.7, reviewCount: 12345,
     categoryId: 'cat-books-0000000-000000000006',
-    images: ['https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=400&fit=crop'],
-    specifications: { Author: 'James Clear', Pages: '320', Language: 'English', Publisher: 'Penguin Random House' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp']),
+    specifications: JSON.stringify({ Author: 'James Clear', Pages: '320', Language: 'English', Publisher: 'Penguin Random House' }),
   },
-  // Sports
   {
     name: 'Yonex Astrox 88D Pro Badminton Racket',
     description: 'Rotational Generator System for powerful smashes, 4U weight.',
     price: 8999, originalPrice: 12000, discount: 25, stock: 40, brand: 'Yonex',
     rating: 4.6, reviewCount: 876,
     categoryId: 'cat-sports-000000-000000000007',
-    images: ['https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=400&h=400&fit=crop'],
-    specifications: { Weight: '4U (80-84g)', Balance: 'Head Heavy', Flex: 'Stiff', Material: 'HM Graphite' },
+    images: JSON.stringify(['https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/1.webp']),
+    specifications: JSON.stringify({ Weight: '4U (80-84g)', Balance: 'Head Heavy', Flex: 'Stiff', Material: 'HM Graphite' }),
   },
-  // Beauty
   {
     name: 'Lakme Absolute Skin Natural Mousse Foundation',
     description: 'Lightweight mousse formula, SPF 8, 16hr coverage.',
     price: 549, originalPrice: 799, discount: 31, stock: 180, brand: 'Lakme',
     rating: 4.2, reviewCount: 4321,
     categoryId: 'cat-beauty-000000-000000000008',
-    images: ['https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop'],
-    specifications: { Coverage: 'Medium to Full', Finish: 'Natural', SPF: '8', Volume: '25g' },
+    images: JSON.stringify([
+      'https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp',
+      'https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/2.webp',
+    ]),
+    specifications: JSON.stringify({ Coverage: 'Medium to Full', Finish: 'Natural', SPF: '8', Volume: '25g' }),
   },
 ];
 
@@ -177,7 +176,6 @@ async function seed() {
     await sequelize.sync({ force: true });
     console.log('Database synced');
 
-    // Create default user
     const hashedPassword = await bcrypt.hash('password123', 10);
     await User.create({
       id: DEFAULT_USER_ID,
@@ -189,11 +187,9 @@ async function seed() {
     });
     console.log('Default user created');
 
-    // Create categories
     await Category.bulkCreate(categories);
     console.log('Categories seeded');
 
-    // Create products
     await Product.bulkCreate(products);
     console.log('Products seeded');
 
