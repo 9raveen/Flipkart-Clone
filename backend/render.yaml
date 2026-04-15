@@ -3,7 +3,7 @@ services:
     name: flipkart-clone-api
     env: node
     buildCommand: npm install
-    startCommand: node server.js
+    startCommand: node src/seeders/seed.js && node server.js
     envVars:
       - key: NODE_ENV
         value: production
