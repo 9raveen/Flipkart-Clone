@@ -1,0 +1,149 @@
+.page {
+  background: var(--flipkart-gray);
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e0e0e0;
+  border-top-color: var(--flipkart-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.pageTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 16px;
+}
+
+.empty {
+  background: white;
+  padding: 60px;
+  text-align: center;
+  color: #878787;
+}
+
+.shopBtn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 28px;
+  background: var(--flipkart-blue);
+  color: white;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.orderCard {
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--flipkart-border);
+  background: #fafafa;
+}
+
+.orderNumber {
+  font-size: 14px;
+  font-weight: 600;
+  color: #212121;
+}
+
+.orderDate {
+  font-size: 12px;
+  color: #878787;
+  margin-top: 2px;
+}
+
+.orderMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.orderTotal {
+  font-size: 16px;
+  font-weight: 700;
+  color: #212121;
+}
+
+.orderItems {
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.itemName {
+  flex: 1;
+  color: #212121;
+}
+
+.itemQty { color: #878787; }
+.itemPrice { font-weight: 600; }
+
+.orderFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-top: 1px solid var(--flipkart-border);
+  background: #fafafa;
+}
+
+.paymentMethod {
+  font-size: 13px;
+  color: #878787;
+}
+
+.viewBtn {
+  font-size: 14px;
+  color: var(--flipkart-blue);
+  font-weight: 500;
+}

@@ -1,0 +1,50 @@
+.page {
+  background: var(--flipkart-gray);
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.pageTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 16px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 12px;
+  text-align: center;
+  background: white;
+  padding: 60px;
+}
+
+.empty h2 { font-size: 20px; color: #212121; }
+.empty p { font-size: 14px; color: #878787; }
+
+.shopBtn {
+  margin-top: 8px;
+  padding: 10px 28px;
+  background: var(--flipkart-blue);
+  color: white;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--flipkart-border);
+}

@@ -1,0 +1,350 @@
+.page {
+  background: var(--flipkart-gray);
+  min-height: 100vh;
+  padding: 12px 0;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.loadingSpinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e0e0e0;
+  border-top-color: var(--flipkart-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.productLayout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 12px;
+  background: white;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 56px;
+  height: 56px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f5f5f5;
+  padding: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.activeThumb { border-color: var(--flipkart-blue); }
+
+.mainImage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 340px;
+  border: 1px solid var(--flipkart-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mainImage img {
+  max-height: 320px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.wishlistBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  color: #878787;
+  transition: color 0.2s;
+}
+
+.wishlistBtn:hover { color: var(--flipkart-red); }
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.addToCartBtn, .buyNowBtn {
+  flex: 1;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+
+.addToCartBtn {
+  background: var(--flipkart-yellow);
+  color: #212121;
+}
+
+.buyNowBtn {
+  background: var(--flipkart-orange);
+  color: white;
+}
+
+.addToCartBtn:hover, .buyNowBtn:hover { opacity: 0.9; }
+.addToCartBtn:disabled, .buyNowBtn:disabled { background: #e0e0e0; color: #878787; cursor: not-allowed; }
+
+/* Details */
+.detailsSection {
+  padding-left: 24px;
+}
+
+.brand {
+  font-size: 14px;
+  color: var(--flipkart-blue);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.productName {
+  font-size: 22px;
+  font-weight: 400;
+  color: #212121;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--flipkart-border);
+}
+
+.ratingBadge {
+  background: var(--flipkart-green);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reviewCount {
+  font-size: 14px;
+  color: #878787;
+}
+
+.pricingSection {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #212121;
+}
+
+.originalPrice {
+  font-size: 16px;
+  color: #878787;
+  text-decoration: line-through;
+}
+
+.discount {
+  font-size: 18px;
+  color: var(--flipkart-green);
+  font-weight: 500;
+}
+
+.stockStatus {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.inStock { color: var(--flipkart-green); font-weight: 500; }
+.outOfStock { color: var(--flipkart-red); font-weight: 500; }
+
+.quantityRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--flipkart-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.quantityControl button {
+  width: 36px;
+  height: 36px;
+  background: #f5f5f5;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--flipkart-blue);
+  transition: background 0.2s;
+}
+
+.quantityControl button:hover { background: #e8f0fe; }
+
+.quantityControl span {
+  width: 48px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.offersSection {
+  background: #f5f5f5;
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.offersSection h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.offersSection ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.offersSection li {
+  font-size: 13px;
+  color: #212121;
+}
+
+.deliverySection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--flipkart-border);
+}
+
+.deliveryItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.deliveryItem strong {
+  font-size: 14px;
+  display: block;
+}
+
+.deliveryItem p {
+  font-size: 12px;
+  color: #878787;
+}
+
+.descriptionSection {
+  margin-bottom: 20px;
+}
+
+.descriptionSection h3, .specsSection h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--flipkart-border);
+}
+
+.descriptionSection p {
+  font-size: 14px;
+  color: #212121;
+  line-height: 1.7;
+}
+
+.specsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specsTable tr:nth-child(even) { background: #f9f9f9; }
+
+.specKey {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #878787;
+  width: 35%;
+  vertical-align: top;
+}
+
+.specVal {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #212121;
+}
+
+@media (max-width: 900px) {
+  .productLayout { grid-template-columns: 1fr; }
+  .imageSection { position: static; }
+  .detailsSection { padding-left: 0; }
+}
